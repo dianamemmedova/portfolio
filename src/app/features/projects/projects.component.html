@@ -1,0 +1,46 @@
+<section id="projects">
+  <div class="section-inner">
+
+    <div appScrollReveal>
+      <div class="sec-label">03 — işlər</div>
+      <h2 class="sec-title">Seçilmiş <span class="hl">Layihələr</span></h2>
+    </div>
+
+    <div class="projects-grid">
+      <div
+        *ngFor="let project of projects"
+        class="project-card"
+        appScrollReveal
+        [revealDelay]="project.id * 100"
+      >
+        <div class="card-header">
+          <span class="proj-num">{{ project.num }}</span>
+          <span class="proj-emoji">{{ project.emoji }}</span>
+        </div>
+
+        <div class="proj-name">{{ project.name }}</div>
+        <div class="proj-role">{{ project.role }}</div>
+        <div class="proj-desc">{{ project.description }}</div>
+
+        <ul class="deliverables">
+          <li *ngFor="let item of project.deliverables">{{ item }}</li>
+        </ul>
+
+        <div class="proj-tags">
+          <span *ngFor="let tag of project.tags" class="ptag">{{ tag }}</span>
+        </div>
+
+        <div class="proj-links">
+          <a [href]="project.demoUrl" class="plink" target="_blank">
+            Demo <span>↗</span>
+          </a>
+          <a [href]="project.githubUrl" class="plink" target="_blank">
+            GitHub <span>↗</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
