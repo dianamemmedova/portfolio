@@ -1,0 +1,187 @@
+<section id="about">
+  <div class="section-inner">
+
+    <div appScrollReveal>
+      <div class="sec-label">01 — haqqımda</div>
+      <h2 class="sec-title">Kodla <span class="hl">hekayə</span> yazıram</h2>
+    </div>
+
+    <div class="about-grid">
+
+      <!-- Visual — Code Editor -->
+      <div class="about-visual" appScrollReveal [revealDelay]="100">
+        <div class="editor">
+
+          <div class="editor-header">
+            <div class="editor-dots">
+              <span class="dot d-red"></span>
+              <span class="dot d-yellow"></span>
+              <span class="dot d-green"></span>
+            </div>
+            <div class="editor-tabs">
+              <span class="tab active">diana.ts</span>
+              <span class="tab">skills.json</span>
+            </div>
+          </div>
+
+          <div class="editor-body">
+            <div class="line-numbers">
+              <span *ngFor="let n of lineNumbers">{{ n }}</span>
+            </div>
+            <div class="code-area">
+              <div class="code-line">
+                <span class="kw">interface</span>
+                <span class="type"> Developer</span>
+                <span class="br"> &#123;</span>
+              </div>
+              <div class="code-line indent">
+                <span class="prop">name</span>
+                <span class="punc">: </span>
+                <span class="type">string</span>
+                <span class="punc">;</span>
+              </div>
+              <div class="code-line indent">
+                <span class="prop">role</span>
+                <span class="punc">: </span>
+                <span class="type">string</span>
+                <span class="punc">;</span>
+              </div>
+              <div class="code-line indent">
+                <span class="prop">gpa</span>
+                <span class="punc">: </span>
+                <span class="type">number</span>
+                <span class="punc">;</span>
+              </div>
+              <div class="code-line indent">
+                <span class="prop">skills</span>
+                <span class="punc">: </span>
+                <span class="type">string</span>
+                <span class="punc">[];</span>
+              </div>
+              <div class="code-line indent">
+                <span class="prop">passion</span>
+                <span class="punc">: </span>
+                <span class="type">string</span>
+                <span class="punc">;</span>
+              </div>
+              <div class="code-line">
+                <span class="br">&#125;</span>
+              </div>
+              <div class="code-line">&nbsp;</div>
+              <div class="code-line">
+                <span class="kw">const</span>
+                <span class="var"> diana</span>
+                <span class="punc">: </span>
+                <span class="type">Developer</span>
+                <span class="punc"> = &#123;</span>
+              </div>
+              <div class="code-line indent">
+                <span class="prop">name</span>
+                <span class="punc">: </span>
+                <span class="str">"Diana Mammadova"</span>
+                <span class="punc">,</span>
+              </div>
+              <div class="code-line indent">
+                <span class="prop">role</span>
+                <span class="punc">: </span>
+                <span class="str">"Frontend Developer"</span>
+                <span class="punc">,</span>
+              </div>
+              <div class="code-line indent">
+                <span class="prop">gpa</span>
+                <span class="punc">: </span>
+                <span class="num">3.7</span>
+                <span class="punc">,</span>
+              </div>
+              <div class="code-line indent">
+                <span class="prop">skills</span>
+                <span class="punc">: [</span>
+                <span class="str">"Angular"</span>
+                <span class="punc">, </span>
+                <span class="str">"React"</span>
+                <span class="punc">, </span>
+                <span class="str">"TS"</span>
+                <span class="punc">],</span>
+              </div>
+              <div class="code-line indent">
+                <span class="prop">passion</span>
+                <span class="punc">: </span>
+                <span class="str">"Building the web"</span>
+                <span class="punc">,</span>
+              </div>
+              <div class="code-line">
+                <span class="punc">&#125;</span>
+              </div>
+              <div class="code-line">&nbsp;</div>
+              <div class="code-line">
+                <span class="cm">// ✓ Ready to build amazing things</span>
+              </div>
+              <div class="code-line blink-line">
+                <span class="cursor-block">█</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="editor-footer">
+            <span class="ef-item">⎇ main</span>
+            <span class="ef-item">TypeScript</span>
+            <span class="ef-item ef-active">✓ No errors</span>
+            <span class="ef-item">Ln 18, Col 1</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div appScrollReveal [revealDelay]="200">
+        <p>
+          Bakı Mühəndislik Universitetinin Kompüter Mühəndisliyi ixtisasının
+          4-cü kurs tələbəsiyəm (2022–2026), GPA 3.7 ilə. Formal mühəndislik
+          təhsilimin yanı sıra, Div Academy-də intensiv Full-Stack inkişaf
+          təlimindən keçirəm (avqust 2025-dən).
+        </p>
+        <p>
+          Uniser Group LLC-də 16 həftəlik Sənaye Təcrübəsi ərzində Frontend
+          Developer kimi enterprise səviyyəli, çox modullu CRM sistemləri
+          qurdum. Strukturlaşdırılmış komponent arxitekturası, təhlükəsiz
+          token əsaslı auth axışları və reaktiv data axınları üzrə
+          ixtisaslaşmışam.
+        </p>
+        <p>
+          Süni intellekt, Java və C proqramlaşdırma üzrə çoxlu
+          sertifikatım var. Yeni texnologiya stəklərinə sürətlə uyğunlaşır,
+          qlobal texnologiya icması üçün təsirli həllər qurmağı hədəfləyirəm.
+        </p>
+
+        <div class="about-chips">
+          <span class="chip" *ngFor="let chip of chips">{{ chip }}</span>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat" *ngFor="let stat of stats">
+            <div class="stat-n">{{ stat.num }}</div>
+            <div class="stat-l">{{ stat.label }}</div>
+          </div>
+        </div>
+
+        <div class="about-edu">
+          <div class="edu-item">
+            <span class="edu-icon">🎓</span>
+            <div>
+              <div class="edu-title">Bakı Mühəndislik Universiteti</div>
+              <div class="edu-sub">Kompüter Mühəndisliyi · 2022–2026</div>
+            </div>
+          </div>
+          <div class="edu-item">
+            <span class="edu-icon">🏫</span>
+            <div>
+              <div class="edu-title">Div Academy</div>
+              <div class="edu-sub">Full-Stack Development · 2025–indiyə qədər</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
