@@ -1,0 +1,13 @@
+<nav [class.scrolled]="scrolled()">
+  <div class="logo" (click)="scrollTo('hero')">&lt;<span>Diana</span>.dev /&gt;</div>
+
+  <div class="nav-links">
+    <a
+      *ngFor="let link of links"
+      (click)="scrollTo(link.target)"
+      [class.active]="activeSection() === link.target"
+    >
+      {{ link.label }}
+    </a>
+  </div>
+</nav>
