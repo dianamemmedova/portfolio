@@ -1,0 +1,104 @@
+<section id="contact">
+  <div class="section-inner">
+
+    <div appScrollReveal>
+      <div class="sec-label">05 — əlaqə</div>
+      <h2 class="sec-title">Birlikdə <span class="hl">işləyək</span></h2>
+    </div>
+
+    <div class="contact-grid">
+
+      <div appScrollReveal [revealDelay]="100">
+        <h3>Hazıram! 🔥</h3>
+        <p>
+          Yeni layihə, maraqlı fikir ya da sadəcə salam demək üçün —
+          hər zaman buradayam. Adətən 24 saat ərzində cavab verirəm.
+        </p>
+
+        <div class="contact-links">
+          <a
+            *ngFor="let link of contactLinks"
+            [href]="link.href"
+            target="_blank"
+            class="c-link"
+          >
+            <div class="c-link-ico">{{ link.icon }}</div>
+            <div class="c-link-body">
+              <div class="c-link-label">{{ link.label }}</div>
+              <div class="c-link-val">{{ link.value }}</div>
+            </div>
+            <span class="c-link-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div appScrollReveal [revealDelay]="200">
+
+        <div *ngIf="submitted()" class="success-msg">
+          <span class="success-icon">✓</span>
+          <h4>Mesaj göndərildi!</h4>
+          <p>Ən qısa zamanda sizinlə əlaqə saxlayacağam.</p>
+          <button class="btn-fire" (click)="submitted.set(false)">
+            Yenidən yaz
+          </button>
+        </div>
+
+        <form
+          *ngIf="!submitted()"
+          class="c-form"
+          [formGroup]="form"
+          (ngSubmit)="onSubmit()"
+        >
+          <div class="form-group">
+            <label>ad & soyad</label>
+            <input
+              type="text"
+              formControlName="name"
+              placeholder="Diana Mammadova"
+              [class.error]="isInvalid('name')"
+            />
+            <span *ngIf="isInvalid('name')" class="err-msg">
+              Ad ən azı 2 hərf olmalıdır
+            </span>
+          </div>
+
+          <div class="form-group">
+            <label>email</label>
+            <input
+              type="email"
+              formControlName="email"
+              placeholder="siz@nümunə.az"
+              [class.error]="isInvalid('email')"
+            />
+            <span *ngIf="isInvalid('email')" class="err-msg">
+              Düzgün e-poçt daxil edin
+            </span>
+          </div>
+
+          <div class="form-group">
+            <label> mesaj</label>
+            <textarea
+              formControlName="message"
+              placeholder="Salam Diana! Bir layihəm var..."
+              rows="5"
+              [class.error]="isInvalid('message')"
+            ></textarea>
+            <span *ngIf="isInvalid('message')" class="err-msg">
+              Mesaj ən azı 10 hərf olmalıdır
+            </span>
+          </div>
+
+          <button
+            type="submit"
+            class="btn-fire send-btn"
+            [disabled]="sending()"
+          >
+            {{ sending() ? 'Göndərilir...' : 'GÖNDƏR' }}
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+</section>
