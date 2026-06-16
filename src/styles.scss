@@ -1,1 +1,186 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+:root {
+  --c1: #ff6b35;
+  --c2: #f7c59f;
+  --c3: #e8a87c;
+  --c4: #c1440e;
+
+  --bg:  #0d0905;
+  --bg2: #130b06;
+  --bg3: #1c1008;
+
+  --text:  #fff5ee;
+  --text2: #a8896e;
+
+  --glow: rgba(255, 107, 53, 0.25);
+
+  --font-main: 'Space Grotesk', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+
+  --editor-bg:     #0d0d0d;
+  --editor-header: #1a1a1a;
+  --editor-border: rgba(255, 107, 53, 0.2);
+
+  --syn-keyword: #c792ea;
+  --syn-type:    #82aaff;
+  --syn-prop:    #f07178;
+  --syn-string:  #c3e88d;
+  --syn-number:  #f78c6c;
+  --syn-punct:   #89ddff;
+  --syn-var:     #ffcb6b;
+  --syn-comment: rgba(255, 255, 255, 0.25);
+
+  --dot-red:    #ff5f57;
+  --dot-yellow: #febc2e;
+  --dot-green:  #28c840;
+
+  --c1-4:   rgba(255, 107, 53, 0.04);
+  --c1-5:   rgba(255, 107, 53, 0.05);
+  --c1-6:   rgba(255, 107, 53, 0.06);
+  --c1-8:   rgba(255, 107, 53, 0.08);
+  --c1-10:  rgba(255, 107, 53, 0.10);
+  --c1-12:  rgba(255, 107, 53, 0.12);
+  --c1-15:  rgba(255, 107, 53, 0.15);
+  --c1-18:  rgba(255, 107, 53, 0.18);
+  --c1-20:  rgba(255, 107, 53, 0.20);
+  --c1-25:  rgba(255, 107, 53, 0.25);
+  --c1-30:  rgba(255, 107, 53, 0.30);
+  --c1-35:  rgba(255, 107, 53, 0.35);
+  --c1-40:  rgba(255, 107, 53, 0.40);
+  --c1-65:  rgba(255, 107, 53, 0.65);
+
+  --white-4:  rgba(255, 255, 255, 0.04);
+  --white-6:  rgba(255, 255, 255, 0.06);
+  --white-8:  rgba(255, 255, 255, 0.08);
+  --white-15: rgba(255, 255, 255, 0.15);
+  --white-25: rgba(255, 255, 255, 0.25);
+  --white-35: rgba(255, 255, 255, 0.35);
+  --white-70: rgba(255, 255, 255, 0.70);
+
+  --black-50: rgba(0, 0, 0, 0.50);
+
+  --error: #e74c3c;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-main);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+::-webkit-scrollbar        { width: 3px; }
+::-webkit-scrollbar-track  { background: var(--bg); }
+::-webkit-scrollbar-thumb  { background: var(--c1); border-radius: 2px; }
+
+.section-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+section {
+  padding: 6rem 2rem;
+}
+
+.sec-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--c1);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--c1-15);
+  }
+}
+
+.sec-title {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+
+  .hl { color: var(--c1); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn-fire {
+  padding: 0.85rem 2.2rem;
+  background: var(--c1);
+  color: #fff;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    background: var(--c4);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px var(--glow);
+  }
+}
+
+.btn-ghost {
+  padding: 0.85rem 2.2rem;
+  background: transparent;
+  color: var(--c2);
+  border: 1px solid var(--c1-30);
+  font-size: 0.95rem;
+  font-weight: 500;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  transition: border-color 0.3s, color 0.3s, transform 0.3s;
+
+  &:hover {
+    border-color: var(--c1);
+    color: var(--c1);
+    transform: translateY(-3px);
+  }
+}
