@@ -1,0 +1,67 @@
+<section id="hero">
+
+  <!-- Background -->
+  <div class="noise"></div>
+  <div class="lava">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+  </div>
+  <div class="lines"></div>
+
+  <!-- Content -->
+  <div class="hero-content">
+
+    <div class="hero-eyebrow">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">Computer Engineer · Bakı, AZ</span>
+    </div>
+
+    <h1>
+      Salam, mən<br>
+      <span class="name-wrap">Diana Mammadova</span>
+    </h1>
+
+    <div class="typewriter">
+      &gt; <span class="typed">{{ typedText() }}</span>
+      <span class="cursor" [class.visible]="showCursor()">|</span>
+    </div>
+
+    <p class="hero-desc">
+      Miqyaslana bilən veb tətbiqlər qurmağa həvəsli Kompüter Mühəndisliyinin tələbəsiyəm.
+      Angular və React ilə frontend arxitekturasından süni intellekt və backend sistemlərə qədər
+      mühəndislik ilə müasir veb inkişafı arasında körpü qururam.
+    </p>
+
+    <div class="hero-btns">
+      <button class="btn-fire" (click)="scrollTo('projects')">Layihələrimə bax</button>
+      <button class="btn-ghost" (click)="scrollTo('contact')">Əlaqə yaz</button>
+    </div>
+
+    <div class="hero-badges">
+      <span class="badge">🎓 GPA 3.7</span>
+      <span class="badge">💼 Uniser Group LLC</span>
+      <span class="badge">🏫 Div Academy</span>
+    </div>
+
+  </div>
+
+  <!-- Side dots -->
+  <div class="hero-side">
+    <div class="side-dot active"></div>
+    <div class="side-dot"></div>
+    <div class="side-dot"></div>
+    <div class="side-dot"></div>
+    <div class="side-dot"></div>
+  </div>
+
+  <!-- Ticker -->
+  <div class="ticker">
+    <div class="ticker-inner">
+      @for (item of doubledTicker; track $index) {
+        <span class="ticker-item">{{ item }}</span>
+      }
+    </div>
+  </div>
+
+</section>
