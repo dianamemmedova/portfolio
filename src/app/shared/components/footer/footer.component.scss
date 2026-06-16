@@ -1,0 +1,36 @@
+footer {
+  background: var(--bg);
+  border-top: 1px solid var(--c1-8);
+  padding: 1.75rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-logo {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--c1);
+}
+
+p {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text2);
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+
+  a {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text2);
+    transition: color 0.3s;
+
+    &:hover { color: var(--c1); }
+  }
+}
