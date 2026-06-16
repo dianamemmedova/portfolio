@@ -1,0 +1,44 @@
+<section id="skills">
+  <div class="section-inner">
+
+    <div appScrollReveal>
+      <div class="sec-label">02 — texnologiyalar</div>
+      <h2 class="sec-title">Alətlər & <span class="hl">Bacarıqlar</span></h2>
+    </div>
+
+    <div class="filter-tabs" appScrollReveal [revealDelay]="100">
+      <button
+        *ngFor="let cat of categories"
+        class="tab"
+        [class.active]="activeCategory() === cat"
+        (click)="setCategory(cat)"
+      >
+        {{ cat }}
+      </button>
+    </div>
+
+    <div class="skills-grid">
+      <div
+        *ngFor="let skill of filteredSkills()"
+        class="skill-card"
+        appScrollReveal
+      >
+        <div class="skill-top">
+          <span class="skill-icon">{{ skill.icon }}</span>
+          <span class="skill-cat">{{ skill.category }}</span>
+        </div>
+        <div class="skill-name">{{ skill.name }}</div>
+        <div class="skill-bottom">
+          <div class="skill-bar">
+            <div
+              class="skill-fill"
+              [style.width.%]="skill.percentage"
+            ></div>
+          </div>
+          <span class="skill-pct">{{ skill.percentage }}%</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
